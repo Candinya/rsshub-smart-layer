@@ -1,0 +1,34 @@
+system:
+  debug: false
+  redis:
+    url: "redis://localhost:6379/0"
+    prefix: "rsl:"
+    cache_expire: 3h
+  listen: ":1323"
+  request_timeout: 30s
+
+rsshub:
+  - url: https://rsshub.app
+    platforms:
+      - twitter
+    fallback: true
+  - url: "http://localhost:1200"
+    platforms:
+      - telegram
+      - epicgames
+    fallback: false
+
+translate:
+  platform: libretranslate
+  settings: |
+    api:
+      url: "http://localhost:5000/translate"
+      key:
+  host_base: .rsl.localhost
+
+image_proxy:
+  enable: true
+  path: "/image-proxy"
+  rules:
+    twitter:
+      referer: "https://x.com/"

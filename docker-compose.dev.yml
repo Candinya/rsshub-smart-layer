@@ -1,0 +1,22 @@
+name: "rsshub-smart-layer-dev"
+services:
+  redis:
+    image: redis:alpine
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:6379:6379"
+
+  libretranslate:
+    image: libretranslate/libretranslate:latest
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:5000:5000"
+    tty: true
+    healthcheck:
+      test: ['CMD-SHELL', './venv/bin/python scripts/healthcheck.py']
+
+  rsshub:
+    image: diygod/rsshub:chromium-bundled
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:1200:1200"
