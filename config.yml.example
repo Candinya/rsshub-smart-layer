@@ -19,7 +19,7 @@ rsshub:
     fallback: false
 
 translate:
-  platform: libretranslate
+  provider: libretranslate
   settings: |
     api:
       url: "http://localhost:5000/translate"

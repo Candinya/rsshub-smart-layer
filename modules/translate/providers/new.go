@@ -10,10 +10,10 @@ import (
 )
 
 func NewTranslator(cfg *types.ConfigTranslate, l *zap.Logger) (translate.Provider, error) {
-	switch cfg.Platform {
+	switch cfg.Provider {
 	case "libretranslate":
 		return libretranslate.New(cfg.Settings, l)
 	default:
-		return nil, fmt.Errorf("unsupported platform: %s", cfg.Platform)
+		return nil, fmt.Errorf("unsupported provider: %s", cfg.Provider)
 	}
 }

@@ -29,7 +29,7 @@ type ConfigRSSHub struct {
 }
 
 type ConfigTranslate struct {
-	Platform    string `yaml:"platform"`
+	Provider    string `yaml:"provider"`
 	DefaultLang string `yaml:"default_lang"`
 	Settings    string `yaml:"settings"`
 	HostBase    string `yaml:"host_base"`
