@@ -23,7 +23,7 @@ func (a *app) process(c echo.Context) error {
 	feed, err := a.lb.Fetch(req.URL.Path, platform)
 	if err != nil {
 		a.l.Error("failed to fetch feed", zap.Error(err))
-		return c.NoContent(http.StatusInternalServerError)
+		return c.NoContent(http.StatusServiceUnavailable)
 	}
 
 	a.l.Debug("raw feed data", zap.Any("feed", feed))
