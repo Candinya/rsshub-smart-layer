@@ -64,4 +64,4 @@ Follows RSSHub format query, currently 3 formats:
 
 - `rss`: RSS 2.0 (default / fallback)
 - `atom`: Atom
-- `json`L JSON Feed
+- `json`: JSON Feed
