@@ -27,7 +27,6 @@ translate:
   host_base: .rsl.localhost
 
 image_proxy:
-  enable: true
   path: "/image-proxy"
   rules:
     twitter:
